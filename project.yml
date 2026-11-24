@@ -1,0 +1,38 @@
+name: ScheduleDial
+options:
+  bundleIdPrefix: concept
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+
+packages:
+  TelegramShell:
+    path: Vendor/TelegramShell
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    CODE_SIGN_STYLE: Automatic
+    GENERATE_INFOPLIST_FILE: YES
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    INFOPLIST_KEY_CFBundleDisplayName: "Schedule by Dial"
+    INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+    INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+    INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleDefault
+
+targets:
+  ScheduleDial:
+    type: application
+    platform: iOS
+    sources:
+      - App
+      - Feature
+    dependencies:
+      - package: TelegramShell
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: concept.schedule-dial
